@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample app</title>
+  <%= stylesheet_link_tag "sacffold"  %>
+  <%= stylesheet_link_tag "application"  ,:media => "all"%>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="store">
+<div id="banner">
+  <%= image_tag("logo.png") %>
+  <%= @page_title ||"Sample app" %>
+</div>
+<div id="columns">
+  <div id="side">
+    <p></p>
+    <a href="http://localhost:3000">Home</a><br>
+    <a href="http://www.../faq">Question</a><br>
+    <a href="http://www.../news">News</a><br>
+    <a href="http://www.../contacts">Contacts</a><br>
+    <div id="time">
+      Time : <%= Time.now %>
+    </div>
+  </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<%= form_for(@api_call) do |f| %>
+  <% if @api_call.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@api_call.errors.count, "error") %> prohibited this api_call from being saved:</h2>
+
+      <ul>
+      <% @api_call.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.hidden_field :doctor_id ,:value =>@user.id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payer_name ,'Insurance Company' %><br />
+    <%= f.text_field :payer_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payer_id ,'Insurance Company Id'%><br />
+    <%= f.text_field :payer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subscriber_id ,'Patient Id'%><br />
+    <%= f.text_field :subscriber_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subscriber_first_name ,'Patient First Name'%><br />
+    <%= f.text_field :subscriber_first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :subscriber_last_name,'Patient Last Name' %><br />
+    <%= f.text_field :subscriber_last_name %>
+
+  <div class="field">
+    <%= f.label :patient_contact_no ,'Patient Contact Number'%><br />
+    <%= f.text_field :patient_contact_no %>
+  </div>
+  </div>
+  <div class="field">
+    <%= f.label :subscriber_dob ,'Patient DOB'%><br />
+    <%= f.date_select :subscriber_dob %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

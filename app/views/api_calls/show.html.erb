@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Doctor:</b>
+  <%= @api_call.doctor_id %>
+</p>
+
+<p>
+  <b>Insurance Company :</b>
+  <%= @api_call.payer_name %>
+</p>
+
+<p>
+  <b>Insurance company NPI:</b>
+  <%= @api_call.payer_id %>
+</p>
+
+<p>
+  <b>Patient Id:</b>
+  <%= @api_call.subscriber_id %>
+</p>
+
+<p>
+  <b>Patient first name:</b>
+  <%= @api_call.subscriber_first_name %>
+</p>
+
+<p>
+  <b>Patient last name:</b>
+  <%= @api_call.subscriber_last_name %>
+</p>
+<p>
+  <b>Patient Contact No:</b>
+  <%= @api_call.patient_contact_no %>
+</p>
+
+<p>
+  <b>Subscriber dob:</b>
+  <%= @api_call.subscriber_dob %>
+</p>
+
+
+<%= link_to 'Edit', edit_api_call_path(@api_call) %> |
+<%= link_to 'Back', api_calls_path %>

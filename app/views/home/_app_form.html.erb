@@ -1,0 +1,95 @@
+<form id="api_form" action="/api/submit" class="form-vertical" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <div class="main">
+    <h3>Patients coverage check form</h3>
+    <table class="table views-table">
+      <thead>
+      <tr>
+        <th class="parameter">
+          Parameter
+        </th>
+        <th>
+          Try it!
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <label for="payer_name">Insurance company</label>
+        </td>
+        <td>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" id="payer_name" name="payer_name" data-api="payer_name" placeholder="type here to search" />
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="payer_id">Insurance company Id</label>
+        </td>
+        <td>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" id="payer_id" name="payer_id" data-api="payer_id" placeholder="type here to search" />
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="subscriber_id">Patient Id</label>
+        </td>
+        <td>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" id="subscriber_id" name="subscriber_id" data-api="subscriber_id" placeholder="subscriber_id" />
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="subscriber_first_name">Patient First Name</label>
+        </td>
+        <td>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" id="subscriber_first_name" name="subscriber_first_name" data-api="subscriber_first_name" placeholder="subscriber_first_name" />
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="subscriber_last_name">Patient Last Name</label>
+        </td>
+        <td>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" id="subscriber_last_name" name="subscriber_last_name" data-api="subscriber_last_name" placeholder="subscriber_last_name" />
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="subscriber_dob">Patients DOB</label>
+        </td>
+        <td>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text" id="subscriber_dob" name="subscriber_dob" data-api="subscriber_dob" placeholder="subscriber_dob" />
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="buttons-line">
+      <button type="submit" class="btn" id="sendRequest">Send Request</button>
+    </div>
+  </div>
+</form>

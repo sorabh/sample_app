@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  doctor_id: MyString
+  payer_name: MyString
+  payer_id: MyString
+  subscriber_id: MyString
+  subscriber_first_name: MyString
+  subscriber_last_name: MyString
+  subscriber_dob: 2013-05-21
+
+two:
+  doctor_id: MyString
+  payer_name: MyString
+  payer_id: MyString
+  subscriber_id: MyString
+  subscriber_first_name: MyString
+  subscriber_last_name: MyString
+  subscriber_dob: 2013-05-21

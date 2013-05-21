@@ -1,0 +1,38 @@
+<h1>Listing api_calls</h1>
+
+<table border="1">
+  <tr>
+    <th>Doctor ID </th>
+    <th>Insurance Company </th>
+    <th>Insurance Company NPI </th>
+    <th>Patient </th>
+    <th>Patient first name </th>
+    <th>Patient last name </th>
+    <th>Patient Contact Number </th>
+    <th>Patient dob </th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @api_calls.each do |api_call| %>
+  <tr>
+    <td><%= api_call.doctor_id %></td>
+    <td><%= api_call.payer_name %></td>
+    <td><%= api_call.payer_id %></td>
+    <td><%= api_call.subscriber_id %></td>
+    <td><%= api_call.subscriber_first_name %></td>
+    <td><%= api_call.subscriber_last_name %></td>
+    <td><%= api_call.patient_contact_no %></td>
+    <td><%= api_call.subscriber_dob %></td>
+    <td><%= link_to 'Show', api_call %></td>
+    <td><%= link_to 'Edit', edit_api_call_path(api_call) %></td>
+    <td><%= link_to 'Destroy', api_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Api call', new_api_call_path %>
