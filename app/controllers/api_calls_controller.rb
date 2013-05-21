@@ -41,11 +41,11 @@ class ApiCallsController < ApplicationController
   # POST /api_calls.json
   def create
     @api_call = ApiCall.new(params[:api_call])
-
+    @responce = @api_call.make_api_call(@api_call)
     respond_to do |format|
       if @api_call.save
-        format.html { redirect_to @api_call, notice: 'Api call was successfully created.' }
-        format.json { render json: @api_call, status: :created, location: @api_call }
+        format.html {render json: @responce}
+        format.json { render json: @responce }
       else
         format.html { render action: "new" }
         format.json { render json: @api_call.errors, status: :unprocessable_entity }

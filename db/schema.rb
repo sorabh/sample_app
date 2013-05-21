@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521135522) do
+ActiveRecord::Schema.define(:version => 20130521192550) do
 
 # Could not dump table "api_calls" because of following StandardError
 #   Unknown type 'telephone' for column 'patient_contact_no'
