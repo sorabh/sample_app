@@ -20,6 +20,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'activeadmin'
+  gem "meta_search",    '>= 1.1.0.pre'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
