@@ -1,3 +1,4 @@
+require 'json'
 class ApiCallsController < ApplicationController
   # GET /api_calls
   # GET /api_calls.json
@@ -14,7 +15,9 @@ class ApiCallsController < ApplicationController
   # GET /api_calls/1.json
   def show
     @api_call = ApiCall.find(params[:id])
-
+    user_id=@api_call.id
+    @user=current_user
+    @responce = JSON.parse(@api_call.responce)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @api_call }
@@ -41,10 +44,10 @@ class ApiCallsController < ApplicationController
   # POST /api_calls.json
   def create
     @api_call = ApiCall.new(params[:api_call])
-    @responce = @api_call.make_api_call(@api_call)
+    @api_call.make_api_call(@api_call)
     respond_to do |format|
       if @api_call.save
-        format.html {render json: @responce}
+        format.html {redirect_to @api_call, notice: 'Api call was successfully'}
         format.json { render json: @responce }
       else
         format.html { render action: "new" }

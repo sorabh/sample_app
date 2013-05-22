@@ -16,9 +16,13 @@
   <div id="side">
     <p></p>
     <a href="http://localhost:3000">Home</a><br>
-    <a href="http://www.../faq">Question</a><br>
-    <a href="http://www.../news">News</a><br>
-    <a href="http://www.../contacts">Contacts</a><br>
+    <% if session[:user_id] != nil %>
+        <a href="http://localhost:3000/api_calls">Api calls</a><br>
+        <a href="http://localhost:3000/logout">Logout</a><br>
+
+    <% else %>
+      <a href="http://localhost:3000/login">Login</a><br>
+  <% end %>
     <div id="time">
       Time : <%= Time.now %>
     </div>

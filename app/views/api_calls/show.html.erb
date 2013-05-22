@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <b>Doctor:</b>
-  <%= @api_call.doctor_id %>
+  <b>Doctor First Name:</b>
+  <%= @user.f_name %>
 </p>
 
 <p>
@@ -35,9 +34,19 @@
 </p>
 
 <p>
-  <b>Subscriber dob:</b>
+  <b>Patient dob:</b>
   <%= @api_call.subscriber_dob %>
 </p>
+<p>
+  <b>Coverage Status Code:</b>
+  <%= @responce["coverage_status"] %>
+</p>
+<p>
+  <b>Responce:</b>
+  <%= @api_call.responce %>
+</p>
+
+
 
 
 <%= link_to 'Edit', edit_api_call_path(@api_call) %> |
