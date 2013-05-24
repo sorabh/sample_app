@@ -7,12 +7,13 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'rename'
+gem 'rvm-capistrano', group: :development
 group :development, :test do
   gem 'sqlite3'
 end
 group :production do
   gem 'thin'
-  gem 'pg'
+  gem 'mysql2'
 end
 
 # Gems used only for assets and not required

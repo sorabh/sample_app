@@ -7,7 +7,8 @@ one:
   subscriber_id: MyString
   subscriber_first_name: MyString
   subscriber_last_name: MyString
-  subscriber_dob: 2013-05-21
+  subscriber_dob: 2013-05-24
+  patient_contact_no: 1
 
 two:
   doctor_id: MyString
@@ -16,4 +17,5 @@ two:
   subscriber_id: MyString
   subscriber_first_name: MyString
   subscriber_last_name: MyString
-  subscriber_dob: 2013-05-21
+  subscriber_dob: 2013-05-24
+  patient_contact_no: 1

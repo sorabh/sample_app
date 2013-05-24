@@ -8,6 +8,7 @@ class CreateApiCalls < ActiveRecord::Migration
       t.string :subscriber_first_name
       t.string :subscriber_last_name
       t.date :subscriber_dob
+      t.integer :patient_contact_no
 
       t.timestamps
     end

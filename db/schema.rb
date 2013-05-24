@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522092020) do
+ActiveRecord::Schema.define(:version => 20130524082144) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,8 +46,19 @@ ActiveRecord::Schema.define(:version => 20130522092020) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-# Could not dump table "api_calls" because of following StandardError
-#   Unknown type 'telephone' for column 'patient_contact_no'
+  create_table "api_calls", :force => true do |t|
+    t.string   "doctor_id"
+    t.string   "payer_name"
+    t.string   "payer_id"
+    t.string   "subscriber_id"
+    t.string   "subscriber_first_name"
+    t.string   "subscriber_last_name"
+    t.date     "subscriber_dob"
+    t.integer  "patient_contact_no"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "responce"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "user_name"
