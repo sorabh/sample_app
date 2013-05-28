@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20130524082144) do
     t.integer  "patient_contact_no"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
-    t.string   "responce"
+    t.text   "responce"
   end
 
   create_table "users", :force => true do |t|
