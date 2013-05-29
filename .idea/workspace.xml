@@ -53,7 +53,7 @@
       <file leaf-file-name="api_calls_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api_calls_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="61" selection-start="481" selection-end="481" vertical-scroll-proportion="0.52102375">
+            <state line="19" column="45" selection-start="465" selection-end="465" vertical-scroll-proportion="0.52102375">
               <folding />
             </state>
           </provider>
@@ -928,7 +928,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api_calls_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="61" selection-start="481" selection-end="481" vertical-scroll-proportion="0.52102375">
+        <state line="19" column="45" selection-start="465" selection-end="465" vertical-scroll-proportion="0.52102375">
           <folding />
         </state>
       </provider>
