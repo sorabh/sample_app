@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/api_call.rb" afterPath="$PROJECT_DIR$/app/models/api_call.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sample_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,7 +125,7 @@
       <file leaf-file-name="api_call.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/api_call.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="42" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.34946236">
+            <state line="9" column="70" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.24193548">
               <folding />
             </state>
           </provider>
@@ -927,7 +926,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/api_call.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="42" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.34946236">
+        <state line="9" column="70" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.24193548">
           <folding />
         </state>
       </provider>
