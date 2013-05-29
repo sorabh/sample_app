@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/api_calls/show.html.erb" afterPath="$PROJECT_DIR$/app/views/api_calls/show.html.erb" />
     </list>
     <ignored path="sample_app.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" time="1369806688509" ignored="false" />
     <file path="/user.rb" changelist="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" time="1369064109560" ignored="false" />
     <file path="/_form.html.erb" changelist="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" time="1369722975734" ignored="false" />
-    <file path="/show.html.erb" changelist="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" time="1369205444181" ignored="false" />
+    <file path="/show.html.erb" changelist="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" time="1369807801370" ignored="false" />
     <file path="/index.html.erb" changelist="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" time="1369236279762" ignored="false" />
     <file path="/routes.rb" changelist="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" time="1369132593136" ignored="false" />
     <file path="/sessions_controller.rb" changelist="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" time="1369063608174" ignored="false" />
@@ -53,7 +53,7 @@
       <file leaf-file-name="api_calls_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api_calls_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="26" selection-start="436" selection-end="446" vertical-scroll-proportion="0.0">
+            <state line="17" column="26" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -95,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="0.30164534">
+            <state line="11" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="-6.875">
               <folding />
             </state>
           </provider>
@@ -122,22 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/api_calls/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1369719968315" expanded="true" signature="3:58" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="63:127" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="132:197" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="202:261" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="266:341" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="346:419" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="423:495" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="500:561" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="565:639" placeholder="..." />
-                <marker date="1369719968315" expanded="true" signature="643:695" placeholder="..." />
-              </folding>
+            <state line="45" column="29" selection-start="693" selection-end="693" vertical-scroll-proportion="0.61608773">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/api_calls/show.html.erb" />
         <option value="$PROJECT_DIR$/app/admin/api_calls.rb" />
         <option value="$PROJECT_DIR$/app/admin/users.rb" />
         <option value="$PROJECT_DIR$/app/views/api_calls/new.html.erb" />
@@ -185,6 +173,7 @@
         <option value="$PROJECT_DIR$/app/models/api_call.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/api_calls/show.html.erb" />
       </list>
     </option>
   </component>
@@ -354,6 +343,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api_calls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -809,31 +838,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/api_call.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="934" selection-end="934" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api_calls_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="436" selection-end="446" vertical-scroll-proportion="0.0">
+        <state line="6" column="20" selection-start="934" selection-end="934" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/api_calls/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1369719968315" expanded="true" signature="3:58" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="63:127" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="132:197" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="202:261" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="266:341" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="346:419" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="423:495" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="500:561" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="565:639" placeholder="..." />
-            <marker date="1369719968315" expanded="true" signature="643:695" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -888,7 +894,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="0.30164534">
+        <state line="11" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api_calls_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="26" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api_calls/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="29" selection-start="693" selection-end="693" vertical-scroll-proportion="0.61608773">
           <folding />
         </state>
       </provider>
