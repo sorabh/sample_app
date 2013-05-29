@@ -17,7 +17,7 @@ class ApiCallsController < ApplicationController
     @api_call = ApiCall.find(params[:id])
     user_id=@api_call.id
     @user=current_user
-  #  @responce = JSON.parse(@api_call.responce)
+    @responce = JSON.parse(@api_call.responce)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @api_call }

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5b94fc9-afb1-431a-b6eb-4d1207b9fbd2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/api_call.rb" afterPath="$PROJECT_DIR$/app/models/api_call.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/api_calls/show.html.erb" afterPath="$PROJECT_DIR$/app/views/api_calls/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api_calls_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api_calls_controller.rb" />
     </list>
     <ignored path="sample_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,10 +50,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="api_calls_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="api_calls_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api_calls_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="3" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
+            <state line="19" column="2" selection-start="422" selection-end="422" vertical-scroll-proportion="0.52102375">
               <folding />
             </state>
           </provider>
@@ -132,7 +131,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api_call.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="api_call.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/api_call.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
@@ -172,9 +171,9 @@
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/api_calls_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/api_calls/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/api_call.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api_calls_controller.rb" />
       </list>
     </option>
   </component>
@@ -913,13 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api_calls_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="3" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api_calls/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="1" selection-start="599" selection-end="599" vertical-scroll-proportion="-11.541667">
@@ -930,6 +922,13 @@
     <entry file="file://$PROJECT_DIR$/app/models/api_call.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api_calls_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="2" selection-start="422" selection-end="422" vertical-scroll-proportion="0.52102375">
           <folding />
         </state>
       </provider>
