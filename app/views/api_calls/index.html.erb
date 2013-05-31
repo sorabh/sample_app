@@ -19,6 +19,7 @@
 
 <% @api_calls.each do |api_call| %>   .
   <% if api_call.doctor_id.to_s == session[:user_id].to_s %>
+    <%= div_for api_call do %>
     <tr>
       <td><%= api_call.payer_name %></td>
       <td><%= api_call.payer_id %></td>
@@ -28,8 +29,9 @@
       <td><%= api_call.patient_contact_no %></td>
       <td><%= api_call.subscriber_dob %></td>
       <td><%= link_to 'Show', api_call %></td>
-      <td><%= link_to 'Destroy', api_call, method: :delete, data: { confirm: 'Are you sure?' },remote: true %></td>
+      <td><%= link_to 'Destroy', api_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
+    <% end %>
   <% end %>
 
 <% end %>
