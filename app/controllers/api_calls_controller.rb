@@ -3,11 +3,14 @@ class ApiCallsController < ApplicationController
   # GET /api_calls
   # GET /api_calls.json
   def index
-    @api_calls = ApiCall.all
+    @api_calls = ApiCall.order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @api_calls }
+      format.csv { send_data @api_calls.to_csv(session[:user_id].to_s)}
+      format.xls #{ send_data @api_calls.to_csv(col_sep: "\t")}
+
     end
   end
 
@@ -17,7 +20,6 @@ class ApiCallsController < ApplicationController
     @api_call = ApiCall.find(params[:id])
     user_id=@api_call.id
     @user=current_user
-    @responce = JSON.parse(@api_call.responce)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @api_call }
@@ -83,5 +85,10 @@ class ApiCallsController < ApplicationController
       format.json { head :no_content }
       format.js
     end
+  end
+
+  def import
+    ApiCall.import(params[:file] ,session[:user_id])
+    redirect_to home_url ,notice: 'Patients details imported'
   end
 end

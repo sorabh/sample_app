@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Patient First Name</Data></Cell>
+        <Cell><Data ss:Type="String">Patient Last Name</Data></Cell>
+        <Cell><Data ss:Type="String">Patient Id</Data></Cell>
+        <Cell><Data ss:Type="String">Patient Contact No</Data></Cell>
+        <Cell><Data ss:Type="String">Patient DoB</Data></Cell>
+        <Cell><Data ss:Type="String">Insurance Company Name</Data></Cell>
+        <Cell><Data ss:Type="String">Insurance Company Id</Data></Cell>
+        <Cell><Data ss:Type="String">Created_at</Data></Cell>
+        <Cell><Data ss:Type="String">Coverage Status Code</Data></Cell>
+
+
+      </Row>
+      <% @api_calls.each do |api_call| %>
+          <% if api_call.doctor_id.to_s == session[:user_id].to_s %>
+            <Row>
+              <Cell><Data ss:Type="string"><%= api_call.subscriber_first_name %></Data></Cell>
+              <Cell><Data ss:Type="string"><%= api_call.subscriber_last_name %></Data></Cell>
+              <Cell><Data ss:Type="string"><%= api_call.subscriber_id %></Data></Cell>
+              <Cell><Data ss:Type="string"><%= api_call.patient_contact_no %></Data></Cell>
+              <Cell><Data ss:Type="date"><%= api_call.subscriber_dob %></Data></Cell>
+              <Cell><Data ss:Type="string"><%= api_call.payer_name %></Data></Cell>
+              <Cell><Data ss:Type="string"><%= api_call.payer_id %></Data></Cell>
+              <Cell><Data ss:Type="string"><%= api_call.created_at.to_date %></Data></Cell>
+              <Cell><Data ss:Type="string"><%= api_call.coverage_status_code %></Data></Cell>
+
+
+            </Row>
+          <% end %>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+

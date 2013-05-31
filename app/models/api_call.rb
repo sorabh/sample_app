@@ -1,6 +1,6 @@
 require 'net/http'
 class ApiCall < ActiveRecord::Base
-  attr_accessible :doctor_id, :patient_contact_no, :payer_id, :payer_name, :subscriber_dob, :subscriber_first_name, :subscriber_id, :subscriber_last_name ,:responce
+  attr_accessible :doctor_id, :patient_contact_no, :payer_id, :payer_name, :subscriber_dob, :subscriber_first_name, :subscriber_id, :subscriber_last_name ,:responce,:coverage_status_code
   validate :doctor_id, :patient_contact_no, :payer_id, :payer_name, :subscriber_dob, :subscriber_first_name, :subscriber_id, :subscriber_last_name, :presence => true
   def make_api_call(call)
     doctor=User.find(call.doctor_id)
@@ -14,9 +14,44 @@ class ApiCall < ActiveRecord::Base
 
     response = http.request(request)
     call.responce=response.body
-
-
-
-
+    json_body=JSON.parse(response.body)
+    call.coverage_status_code= json_body["coverage_status"]
   end
+
+  def self.to_csv(option ={},id)
+    column=["subscriber_first_name","subscriber_last_name","subscriber_id","patient_contact_no","subscriber_dob","payer_name","payer_id","coverage_status_code"]
+    CSV.generate(option) do |csv|
+      csv << column
+      all.each do |api_call|
+        csv << api_call.attributes.values_at(*column) if api_call.doctor_id.to_s == id
+      end
+    end
+  end
+
+
+
+
+  def self.import(file,id)
+    spreadsheet = open_spreadsheet(file)
+    header = spreadsheet.row(1)
+    (2..spreadsheet.last_row).each do |i|
+      row = Hash[[header, spreadsheet.row(i)].transpose]
+      row[:doctor_id]= id
+      api_call =  ApiCall.new
+      api_call.attributes = row.to_hash.slice(*accessible_attributes)
+      api_call.make_api_call(api_call)
+      api_call.save!
+    end
+  end
+
+  def self.open_spreadsheet(file)
+    case File.extname(file.original_filename)
+      when ".csv" then CSV.new(file.path, nil, :ignore)
+      when ".xls" then Excel.new(file.path, nil, :ignore)
+      when ".xlsx" then Excelx.new(file.path, nil, :ignore)
+      else raise "Unknown file type: #{file.original_filename}"
+    end
+  end
+
+
 end

@@ -4,7 +4,9 @@ EligibleapiSampleApp::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :api_calls
+  resources :api_calls do
+    collection { post :import}
+  end
 
 
   get "api/submit"
@@ -26,7 +28,6 @@ EligibleapiSampleApp::Application.routes.draw do
   get "home/index"
 
   resources :users
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

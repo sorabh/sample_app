@@ -1,15 +1,23 @@
 <h1>Listing api_calls</h1>
+<p>
+  Download:
+  <%= link_to "CSV", api_calls_path(format: "csv") %> |
+  <%= link_to "Excel", api_calls_path(format: "xls") %>
+</p>
 
 <table border="1">
   <tr>
-    <th>Insurance Company </th>
-    <th>Insurance Company NPI </th>
-    <th>Patient </th>
     <th>Patient first name </th>
     <th>Patient last name </th>
+    <th>Patient Id </th>
     <th>Patient Contact Number </th>
     <th>Patient dob </th>
+    <th>Insurance Company </th>
+    <th>Insurance Company Id </th>
+
+    <th>Created on </th>
     <th>Coverage Status Code </th>
+
     <th>Delete </th>
 
 
@@ -17,21 +25,23 @@
     <th></th>
   </tr>
 
-<% @api_calls.each do |api_call| %>   .
+<% @api_calls.each do |api_call| %>
   <% if api_call.doctor_id.to_s == session[:user_id].to_s %>
-    <%= div_for api_call do %>
-    <tr>
-      <td><%= api_call.payer_name %></td>
-      <td><%= api_call.payer_id %></td>
-      <td><%= api_call.subscriber_id %></td>
-      <td><%= api_call.subscriber_first_name %></td>
-      <td><%= api_call.subscriber_last_name %></td>
-      <td><%= api_call.patient_contact_no %></td>
-      <td><%= api_call.subscriber_dob %></td>
-      <td><%= link_to 'Show', api_call %></td>
-      <td><%= link_to 'Destroy', api_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr>
+        <td><%= api_call.subscriber_first_name %></td>
+        <td><%= api_call.subscriber_last_name %></td>
+        <td><%= api_call.subscriber_id %></td>
+        <td><%= api_call.patient_contact_no %></td>
+        <td><%= api_call.subscriber_dob %></td>
+
+        <td><%= api_call.payer_name %></td>
+        <td><%= api_call.payer_id %></td>
+
+
+        <td><%= api_call.created_at.to_date %></td>
+        <td><%= link_to 'Show', api_call %></td>
+        <td><%= link_to 'Destroy', api_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
-    <% end %>
   <% end %>
 
 <% end %>

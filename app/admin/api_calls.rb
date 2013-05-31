@@ -6,7 +6,7 @@ ActiveAdmin.register ApiCall do
     column :payer_name
     column :subscriber_first_name
     column :subscriber_last_name
-    column :subscriber_id
+    column 'Subscriber Id',:subscriber_id
     column :patient_contact_no
 
   end
