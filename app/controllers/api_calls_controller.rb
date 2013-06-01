@@ -46,7 +46,7 @@ class ApiCallsController < ApplicationController
   # POST /api_calls.json
   def create
     @api_call = ApiCall.new(params[:api_call])
-    @api_call.make_api_call(@api_call)
+    ApiCall.make_api_call(@api_call)
     respond_to do |format|
       if @api_call.save
         format.html {redirect_to @api_call, notice: 'Api call was successfully'}
@@ -89,6 +89,6 @@ class ApiCallsController < ApplicationController
 
   def import
     ApiCall.import(params[:file] ,session[:user_id])
-    redirect_to home_url ,notice: 'Patients details imported'
+    redirect_to api_calls_url ,notice: 'Patients details imported'
   end
 end

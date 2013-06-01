@@ -2,7 +2,7 @@ require 'net/http'
 class ApiCall < ActiveRecord::Base
   attr_accessible :doctor_id, :patient_contact_no, :payer_id, :payer_name, :subscriber_dob, :subscriber_first_name, :subscriber_id, :subscriber_last_name ,:responce,:coverage_status_code
   validate :doctor_id, :patient_contact_no, :payer_id, :payer_name, :subscriber_dob, :subscriber_first_name, :subscriber_id, :subscriber_last_name, :presence => true
-  def make_api_call(call)
+  def self.make_api_call(call)
     doctor=User.find(call.doctor_id)
     uri =URI.parse('https://gds.eligibleapi.com/v1/plan/all.json?'+'api_key=Test' +'&payer_id='+(call.payer_id).to_s+'&payer_name='+call.payer_name.to_s+'&subscriber_dob='+call.subscriber_dob.to_s+'&subscriber_id='+call.subscriber_id.to_s+'&subscriber_last_name='+call.subscriber_last_name.to_s+'&subscriber_first_name='+call.subscriber_first_name.to_s+'&service_provider_last_name='+doctor.l_name.to_s+'&service_provider_first_name='+doctor.f_name.to_s+'&service_provider_NPI='+doctor.npi.to_s)
    # call.responce= Net::HTTP.get(URI.parse(url))
@@ -31,27 +31,31 @@ class ApiCall < ActiveRecord::Base
 
 
 
+
+
   def self.import(file,id)
     spreadsheet = open_spreadsheet(file)
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      row[:doctor_id]= id
-      api_call =  ApiCall.new
+      row["doctor_id"]=id
+      puts row
+      api_call =  new
       api_call.attributes = row.to_hash.slice(*accessible_attributes)
-      api_call.make_api_call(api_call)
+      make_api_call(api_call)
       api_call.save!
     end
   end
 
   def self.open_spreadsheet(file)
     case File.extname(file.original_filename)
-      when ".csv" then CSV.new(file.path, nil, :ignore)
-      when ".xls" then Excel.new(file.path, nil, :ignore)
-      when ".xlsx" then Excelx.new(file.path, nil, :ignore)
+      when ".csv" then Roo::Csv.new(file.path, nil, :ignore)
+      when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
+      when ".xlsx" then Roo::Excelx.new(file.path, nil, :ignore)
       else raise "Unknown file type: #{file.original_filename}"
     end
   end
+
 
 
 end

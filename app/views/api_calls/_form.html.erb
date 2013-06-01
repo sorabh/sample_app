@@ -1,3 +1,7 @@
+<div class="depot_form" >
+<legend>Enter patients details</legend>
+
+
 <%= form_for(@api_call) do |f| %>
   <% if @api_call.errors.any? %>
     <div id="error_explanation">
@@ -14,7 +18,7 @@
     <%= f.hidden_field :doctor_id ,:value =>@user.id %>
   </div>
 
-
+  <fieldset>
 
   <div class="field">
     <%= f.label :subscriber_first_name ,'Patient First Name'%><br />
@@ -49,4 +53,6 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  </fieldset>
 <% end %>
+</div>
