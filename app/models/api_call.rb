@@ -28,11 +28,6 @@ class ApiCall < ActiveRecord::Base
     end
   end
 
-
-
-
-
-
   def self.import(file,id)
     spreadsheet = open_spreadsheet(file)
     header =["subscriber_first_name","subscriber_last_name","subscriber_id","patient_contact_no","subscriber_dob","payer_name","payer_id","coverage_status_code"]
@@ -53,6 +48,16 @@ class ApiCall < ActiveRecord::Base
       when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
       when ".xlsx" then Roo::Excelx.new(file.path, nil, :ignore)
       else raise "Unknown file type: #{file.original_filename}"
+    end
+  end
+
+
+
+  def self.search(search)
+    if search
+      where('subscriber_first_name LIKE ?', "%#{search}%")
+    else
+      scoped
     end
   end
 

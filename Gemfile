@@ -10,7 +10,7 @@ gem 'rvm-capistrano', group: :development
 gem 'thin'
 gem 'pg'
 gem 'roo'
-
+gem "will_paginate", :git => "https://github.com/p7r/will_paginate.git", :branch => "rails3"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

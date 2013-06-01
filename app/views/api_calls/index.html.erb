@@ -1,4 +1,14 @@
 <h1>Listing Api Calls</h1>
+
+
+<%= form_tag api_calls_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
+
+
 <p>
   Download:
   <%= link_to "CSV", api_calls_path(format: "csv") %> |
@@ -38,7 +48,7 @@
 
 
         <td><%= api_call.created_at.to_date %></td>
-        <td><%= link_to 'Show', api_call %></td>
+        <td><%= link_to api_call.coverage_status_code, api_call %></td>
     </tr>
   <% end %>
 
@@ -46,5 +56,6 @@
 </table>
 
 <br />
+<%= will_paginate @api_calls %>
 
 <%= link_to 'New Api call', home_path %>
