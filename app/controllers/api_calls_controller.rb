@@ -3,7 +3,7 @@ class ApiCallsController < ApplicationController
   # GET /api_calls
   # GET /api_calls.json
   def index
-    @api_calls = ApiCall.order("created_at DESC")
+    @api_calls = ApiCall.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
