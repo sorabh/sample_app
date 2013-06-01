@@ -1,6 +1,6 @@
 <%= render '/api_calls/form'%>
 
-<h2>Import Details via file</h2>
+<h2>Import Details via CSV file</h2>
 <%= form_tag import_api_calls_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Import" %>

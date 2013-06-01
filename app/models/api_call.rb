@@ -21,7 +21,7 @@ class ApiCall < ActiveRecord::Base
   def self.to_csv(option ={},id)
     column=["subscriber_first_name","subscriber_last_name","subscriber_id","patient_contact_no","subscriber_dob","payer_name","payer_id","coverage_status_code"]
     CSV.generate(option) do |csv|
-      csv << column
+      csv << ["Patient First name","Patient Last name","Patient Id","Patient Contact No","Patient DoB","Insurance Company Name","Insurance Company Id","Patient Coverage Status Code"]
       all.each do |api_call|
         csv << api_call.attributes.values_at(*column) if api_call.doctor_id.to_s == id
       end
@@ -35,13 +35,13 @@ class ApiCall < ActiveRecord::Base
 
   def self.import(file,id)
     spreadsheet = open_spreadsheet(file)
-    header = spreadsheet.row(1)
+    header =["subscriber_first_name","subscriber_last_name","subscriber_id","patient_contact_no","subscriber_dob","payer_name","payer_id","coverage_status_code"]
+    column= ["doctor_id","subscriber_first_name","subscriber_last_name","subscriber_id","patient_contact_no","subscriber_dob","payer_name","payer_id","coverage_status_code"]
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       row["doctor_id"]=id
-      puts row
       api_call =  new
-      api_call.attributes = row.to_hash.slice(*accessible_attributes)
+      api_call.attributes = row.to_hash.slice(*column)
       make_api_call(api_call)
       api_call.save!
     end
