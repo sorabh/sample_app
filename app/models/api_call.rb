@@ -17,7 +17,6 @@ class ApiCall < ActiveRecord::Base
 
     response = http.request(request)
     status = response.status
-    if status ==
     call.responce=response.body
     json_body=JSON.parse(response.body)
     call.coverage_status_code= json_body["coverage_status"]
