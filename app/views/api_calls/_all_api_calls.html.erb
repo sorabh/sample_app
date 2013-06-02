@@ -13,6 +13,7 @@
     <th><%= sortable "created_at","Created on" %> </th>
     <th><%= sortable "coverage_status_code","Coverage Status Code" %> </th>
 
+    <th>delete</th>
 
 
 
@@ -33,7 +34,8 @@
 
 
             <td><%= api_call.created_at.to_date %></td>
-            <td><%= link_to api_call.coverage_status_code, api_call %></td>
+            <td><%= api_call.coverage_status_code %></td>
+            <td><%= link_to 'Destroy', api_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
       <% end %>
 
