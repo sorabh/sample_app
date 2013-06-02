@@ -1,7 +1,8 @@
 <h1>Listing Api Calls</h1>
 
 
-<%= form_tag api_calls_path, :method => 'get' do %>
+<%= form_tag api_calls_path, :method => 'get' ,id: "api_search" ,remote: true do %>
+
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :name => nil %>
@@ -14,48 +15,6 @@
   <%= link_to "CSV", api_calls_path(format: "csv") %> |
   <%= link_to "Excel", api_calls_path(format: "xls") %>
 </p>
-
-<table border="1">
-  <tr>
-    <th>Patient first name </th>
-    <th>Patient last name </th>
-    <th>Patient Id </th>
-    <th>Patient Contact Number </th>
-    <th>Patient dob </th>
-    <th>Insurance Company </th>
-    <th>Insurance Company Id </th>
-
-    <th>Created on </th>
-    <th>Coverage Status Code </th>
-
-
-
-
-    <th></th>
-  </tr>
-
-<% @api_calls.each do |api_call| %>
-  <% if api_call.doctor_id.to_s == session[:user_id].to_s %>
-      <tr>
-        <td><%= api_call.subscriber_first_name %></td>
-        <td><%= api_call.subscriber_last_name %></td>
-        <td><%= api_call.subscriber_id %></td>
-        <td><%= api_call.patient_contact_no %></td>
-        <td><%= api_call.subscriber_dob %></td>
-
-        <td><%= api_call.payer_name %></td>
-        <td><%= api_call.payer_id %></td>
-
-
-        <td><%= api_call.created_at.to_date %></td>
-        <td><%= link_to api_call.coverage_status_code, api_call %></td>
-    </tr>
-  <% end %>
-
-<% end %>
-</table>
-
-<br />
-<%= will_paginate @api_calls %>
+<div id="api_calls" ><%= render 'all_api_calls' %> </div>
 
 <%= link_to 'New Api call', home_path %>

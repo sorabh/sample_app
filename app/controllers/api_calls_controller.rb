@@ -1,15 +1,18 @@
 require 'json'
 class ApiCallsController < ApplicationController
+  before_filter :authorize
+  helper_method :sort_column ,:sort_direction
   # GET /api_calls
   # GET /api_calls.json
   def index
-    @api_calls = ApiCall.search(params[:search]).order("created_at desc").paginate(per_page: 10,page: params[:page])
+    @api_calls = ApiCall.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 10,page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @api_calls }
       format.csv { send_data @api_calls.to_csv(session[:user_id].to_s)}
       format.xls #{ send_data @api_calls.to_csv(col_sep: "\t")}
+      format.js
 
     end
   end
@@ -91,4 +94,14 @@ class ApiCallsController < ApplicationController
     ApiCall.import(params[:file] ,session[:user_id])
     redirect_to api_calls_url ,notice: 'Patients details imported'
   end
+  private
+
+  def sort_column
+    ApiCall.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
 end

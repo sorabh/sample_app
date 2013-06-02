@@ -1,0 +1,44 @@
+<%= hidden_field_tag :direction ,params[:direction] %>
+<%= hidden_field_tag :sort ,params[:sort] %>
+<table border="1">
+  <tr>
+    <th><%= sortable "subscriber_first_name","Patient first name" %></th>
+    <th><%= sortable "subscriber_last_name","Patient last name" %> </th>
+    <th><%= sortable "subscriber_id" ,"Patient Id"%> </th>
+    <th><%= sortable "patient_contact_no","Patient Contact Number" %></th>
+    <th><%= sortable "subscriber_dob","Patient dob" %> </th>
+    <th><%= sortable "payer_name" ,"Insurance Company"%> </th>
+    <th><%= sortable "payer_id","Insurance Company Id" %></th>
+
+    <th><%= sortable "created_at","Created on" %> </th>
+    <th><%= sortable "coverage_status_code","Coverage Status Code" %> </th>
+
+
+
+
+    <th></th>
+  </tr>
+
+  <% @api_calls.each do |api_call| %>
+      <% if api_call.doctor_id.to_s == session[:user_id].to_s %>
+          <tr>
+            <td><%= api_call.subscriber_first_name %></td>
+            <td><%= api_call.subscriber_last_name %></td>
+            <td><%= api_call.subscriber_id %></td>
+            <td><%= api_call.patient_contact_no %></td>
+            <td><%= api_call.subscriber_dob %></td>
+
+            <td><%= api_call.payer_name %></td>
+            <td><%= api_call.payer_id %></td>
+
+
+            <td><%= api_call.created_at.to_date %></td>
+            <td><%= link_to api_call.coverage_status_code, api_call %></td>
+          </tr>
+      <% end %>
+
+  <% end %>
+</table>
+
+<br />
+<%= will_paginate @api_calls ,remote: true%>
