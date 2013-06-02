@@ -15,7 +15,7 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.hidden_field :doctor_id ,:value =>@user.id %>
+    <%= f.hidden_field :doctor_id ,:value =>session[:user_id] %>
   </div>
 
   <fieldset>
@@ -34,7 +34,7 @@
   </div>
   <div class="field">
     <%= f.label :patient_contact_no ,'Patient Contact Number'%><br />
-    <%= f.text_field :patient_contact_no %>
+    <%= f.telephone_field :patient_contact_no %>
   </div>
 
   <div class="field">

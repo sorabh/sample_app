@@ -1,7 +1,10 @@
 require 'net/http'
 class ApiCall < ActiveRecord::Base
   attr_accessible :doctor_id, :patient_contact_no, :payer_id, :payer_name, :subscriber_dob, :subscriber_first_name, :subscriber_id, :subscriber_last_name ,:responce,:coverage_status_code
-  validate :doctor_id, :patient_contact_no, :payer_id, :payer_name, :subscriber_dob, :subscriber_first_name, :subscriber_id, :subscriber_last_name, :presence => true
+  validates :doctor_id, :patient_contact_no, :payer_id, :payer_name, :subscriber_dob, :subscriber_first_name, :subscriber_id, :subscriber_last_name, :presence => true
+  validates :patient_contact_no ,:numericality => { :only_integer => true } ,length: {is: 10}
+
+
   def self.make_api_call(call)
     doctor=User.find(call.doctor_id)
     uri =URI.parse('https://gds.eligibleapi.com/v1/plan/all.json?'+'api_key=Test' +'&payer_id='+(call.payer_id).to_s+'&payer_name='+call.payer_name.to_s+'&subscriber_dob='+call.subscriber_dob.to_s+'&subscriber_id='+call.subscriber_id.to_s+'&subscriber_last_name='+call.subscriber_last_name.to_s+'&subscriber_first_name='+call.subscriber_first_name.to_s+'&service_provider_last_name='+doctor.l_name.to_s+'&service_provider_first_name='+doctor.f_name.to_s+'&service_provider_NPI='+doctor.npi.to_s)
@@ -13,10 +16,13 @@ class ApiCall < ActiveRecord::Base
     request = Net::HTTP::Get.new(uri.request_uri)
 
     response = http.request(request)
+    status = response.status
+    if status ==
     call.responce=response.body
     json_body=JSON.parse(response.body)
     call.coverage_status_code= json_body["coverage_status"]
   end
+
 
   def self.to_csv(option ={},id)
     column=["subscriber_first_name","subscriber_last_name","subscriber_id","patient_contact_no","subscriber_dob","payer_name","payer_id","coverage_status_code"]
