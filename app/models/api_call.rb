@@ -16,14 +16,13 @@ class ApiCall < ActiveRecord::Base
     request = Net::HTTP::Get.new(uri.request_uri)
 
     response = http.request(request)
-    status = response.status
     call.responce=response.body
     json_body=JSON.parse(response.body)
     call.coverage_status_code= json_body["coverage_status"]
   end
 
 
-  def self.to_csv(option ={},id)
+  def self.to_csv(option={},id)
     column=["subscriber_first_name","subscriber_last_name","subscriber_id","patient_contact_no","subscriber_dob","payer_name","payer_id","coverage_status_code"]
     CSV.generate(option) do |csv|
       csv << ["Patient First name","Patient Last name","Patient Id","Patient Contact No","Patient DoB","Insurance Company Name","Insurance Company Id","Patient Coverage Status Code"]

@@ -6,11 +6,12 @@ class ApiCallsController < ApplicationController
   # GET /api_calls.json
   def index
     @api_calls = ApiCall.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 10,page: params[:page])
-
+    @api_calls_temp = ApiCall.search(params[:search]).order(sort_column + " " + sort_direction)
+    puts @api_calls
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @api_calls }
-      format.csv { send_data @api_calls.to_csv(session[:user_id].to_s)}
+      format.csv { send_data @api_calls_temp.to_csv(session[:user_id].to_s ) }
       format.xls #{ send_data @api_calls.to_csv(col_sep: "\t")}
       format.js
 
